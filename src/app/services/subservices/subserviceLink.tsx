@@ -7,8 +7,32 @@ function SubserviceLink(){
         const itensArray = data.itens
         return itensArray;
       };
+
+
+      const criarItem = (nivel: string, user: any, valor: any, descricao: any, link: any, status: any) => {
+        const novoItem = {
+            id: data.itens.length + 1,
+            nivel: nivel,
+            user: user,
+            valor: valor,
+            descricao: descricao,
+            link: link,
+            status: status
+
+        };
+
+      
+        // Adicionar o novo item ao array de itens
+        //data.itens.push(novoItem);
+        
+      
+        return novoItem;
+      };
+      
+
     return {
-        listarItens
+        listarItens,
+        criarItem
     }
 
 }

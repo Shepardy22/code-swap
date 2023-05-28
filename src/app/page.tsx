@@ -30,6 +30,8 @@ const Page = () => {
     status: string;
   }>>([]);
 
+
+
   const service = Service();
 
 
@@ -54,6 +56,39 @@ const Page = () => {
     const result = service.listarItens().itensArray;
     setPrintResultConsole(result);
     console.log(result);
+  };
+
+  function handleCriarItem() {
+    const nivel = prompt("Digite o nível do item");
+  const user = Number(prompt("Digite o usuário do item")) ;
+  const valor = Number(prompt("Digite o valor do item"));
+  const descricao = prompt("Digite a descrição do item");
+  const link = prompt("Digite o link do item");
+  const status = prompt("Digite o status do item");
+
+  const novoItem = {
+    nivel: nivel || "",
+    user:  user,
+    valor: valor,
+    descricao: descricao || "",
+    link: link || "",
+    status: status || "",
+  };
+    setPrintConsole(`
+    - function handleCriarItem() {
+      //Solicitando Service para criar Item
+      const result = service.criarItem().novoItem;
+      setPrintResultConsole(result);
+    };
+    `)
+
+
+    const result = service.criarItem(novoItem).novoItem;
+    setPrintConsole(prevConsole => prevConsole + service.criarItem(novoItem).IcriarItem);
+    setPrintConsole(prevConsole => prevConsole + `Item criado com sucesso!`);
+    
+    
+    //console.log(result);
   };
 
 
@@ -95,7 +130,7 @@ const Page = () => {
                     <p>Valor: {item.valor} CODES</p>
                     <p>Descrição: {item.descricao}</p>
                     <p>Link: <a href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a></p>
-                    
+
 
                     <p>Status: {item.status}</p>
         ///////////////////////////////////
@@ -124,7 +159,7 @@ const Page = () => {
               </select>
             </div>
 
-            <button id="btn-criar-item" className={styles.botoes}>Criar Item</button>
+            <button id="btn-criar-item" className={styles.botoes} onClick={() => handleCriarItem()}>Criar Item</button>
             <button id="btn-colocar-venda" className={styles.botoes}>Colocar Item à Venda</button>
             <button id="btn-comprar-item" className={styles.botoes}>Comprar Item</button>
             <button id="btn-listar-itens" className={styles.botoes} onClick={() => handleListarItens()} >Listar Itens</button>

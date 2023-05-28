@@ -15,8 +15,33 @@ const Service = () => {
       return [];
     };
   
-    const criarItem = (nome: string, id: number) => {
-      // Lógica para criar item
+    const criarItem = (item: { nivel: string; user: number; valor: number; descricao: string; link: string; status: string; }) => {
+      const IcriarItem = `
+      - const criarItem = () => {
+        const novoItem = {
+            id: Number(prompt("Digite o id do item")),
+            nivel: prompt("Digite o nível do item"),
+            user: prompt("Digite o usuário do item"),
+            valor: Number(prompt("Digite o valor do item")),
+            descricao: prompt("Digite a descrição do item"),
+            link: prompt("Digite o link do item"),
+            status: prompt("Digite o status do item"),
+        };
+      
+        // Adicionar o novo item ao array de itens
+        //data.itens.push(novoItem);
+        console.log(novoItem);
+      
+        return novoItem;
+      };
+      `
+      const novoItem = subserviceLink.criarItem(item.nivel, item.user, item.valor, item.descricao, item.link, item.status)
+      return {
+        IcriarItem,
+        novoItem
+      }
+
+
     };
   
     const colocarItemVenda = (usuarioId: number, itemId: number, precoVenda: number) => {
@@ -32,7 +57,7 @@ const Service = () => {
       const IListarItens = `
    - function listarItens() {
       //Busca no DataBase os Dados
-      
+
       const itensArray = data.itens 
       
       return {
