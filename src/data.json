@@ -1,0 +1,37 @@
+{
+    "usuarios": [
+      {
+        "nome": "Usuário 1",
+        "chaveAcesso": "chave123",
+        "nivelAcesso": "desenvolvedor",
+        "saldo": 50,
+        "links": [
+          "https://github.com/repositorio/pull-request1",
+          "https://github.com/repositorio/pull-request2"
+        ]
+      },
+      {
+        "nome": "Usuário 2",
+        "chaveAcesso": "chave456",
+        "nivelAcesso": "patrocinador",
+        "saldo": 20,
+        "links": [
+          "https://github.com/repositorio/pull-request3"
+        ]
+      },
+      {
+        "nome": "Usuário 3",
+        "chaveAcesso": "chave789",
+        "nivelAcesso": "personalizado",
+        "saldo": 100,
+        "links": [
+          "https://github.com/repositorio/pull-request4",
+          "https://github.com/repositorio/pull-request5",
+          "https://github.com/repositorio/pull-request6"
+        ]
+      }
+    ]
+
+    
+}
+  

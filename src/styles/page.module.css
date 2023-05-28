@@ -26,7 +26,7 @@
 }
 
 .console {
-
+  border: 1px solid green;
   
   background-color: black;
   color: green;
@@ -36,7 +36,8 @@
 
 
 .painel {
-
+  border: 1px solid green;
+  padding: 10px;
 
 }
 
@@ -62,13 +63,6 @@
   border: 1px solid green;
 
 }
-
-
-
-
-
-
-
 
 
 .opcoes {

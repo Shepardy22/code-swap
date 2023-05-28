@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Service from "./services/service";
 import styles from "../styles/page.module.css";
@@ -8,7 +8,14 @@ import styles from "../styles/page.module.css";
 import '../styles/page.module.css'
 
 
+
+
+
+
 const Page = () => {
+
+  const [nivelSelecionado, setNivelSelecionado] = useState('N1');
+  const [printConsole, setPrintConsole] = useState('');
 
   const service = Service();
 
@@ -35,6 +42,9 @@ const Page = () => {
 
 function handleListarItens() {
   
+ 
+  setPrintConsole(service.listarItens());
+
 };
   
 
@@ -53,18 +63,30 @@ function handleListarItens() {
       <div className={styles.containerTop}>
         {/* SUB SERVICE */}
         <div className={styles.subService}>
-          <h2>Sub service</h2>
+          <h2>Sub services</h2>
+          <p>User: Codigo autenticação usuario</p>
+          
+
+          <h2>API - Solluty( )</h2> 
+          <p>Link:
+             <a href="https://www.solluty.com/" target="_blank" rel="noopener noreferrer">
+              https://codeswap.com/solluty</a>  
+          </p>
+          
+          
+         
         </div>
         {/* CONSOLE */}
         <div className={styles.console}>
           <div id="console-mensagem">
             <p>Console de Mensagens</p>
+            <p>{printConsole}</p>
           </div>
         </div>
 
         {/* BOTOES INTERAÇÃO E HEADER */}
         <div className={styles.painel}>
-          <h1>Sistema de Comércio</h1>
+          <h1>CODESWAP( )</h1>
 
           <div className={styles.opcoes}>
               <button id="btn-criar-usuario" className={styles.botoes}>
@@ -95,11 +117,18 @@ function handleListarItens() {
       <div className={styles.containerBotton}>
 
         <div className={styles.linksUsuario}>
-          <h2>Links usuario</h2>
+          <h2>Links de Request</h2>
+          <h3>
+            T1 - Pull Request
+          </h3>
         </div>
 
         <div className={styles.contaUsuario}>
-          <h2>dados usuario</h2>
+          <h2>Dados do usuario</h2>
+          <p>Nome: </p>
+          <p>Nivel: </p>
+          <p>Saldo: </p>
+
         </div>
 
       </div>

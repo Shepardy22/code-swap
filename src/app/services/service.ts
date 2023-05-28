@@ -16,7 +16,6 @@ const Service = () => {
   
     const listarUsuarios = () => {
       // Lógica para listar usuários
-      console.log(usuarios)
       return [];
     };
   
@@ -33,7 +32,15 @@ const Service = () => {
     };
   
     const listarItens = () => {
-      return itens;
+      const itensArray = `
+      const itens = [
+        { id: 1, nome: "Item 1" },
+        { id: 2, nome: "Item 2" },
+        // ...
+      ]
+      
+      `
+      return itensArray;
     };
   
     const listarBookOfertas = () => {
