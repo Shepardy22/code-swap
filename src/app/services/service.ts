@@ -32,6 +32,7 @@ const Service = () => {
       const IListarItens = `
    - function listarItens() {
       //Busca no DataBase os Dados
+      
       const itensArray = data.itens 
       
       return {
@@ -46,6 +47,10 @@ const Service = () => {
         itensArray
       };
     };
+
+    function ListarItensUsuario(){
+
+    }
   
     const listarBookOfertas = () => {
       // Lógica para listar book de ofertas
@@ -65,6 +70,7 @@ const Service = () => {
       listarItens,
       listarBookOfertas,
       forjarItem,
+      ListarItensUsuario
     }
   };
   
