@@ -1,18 +1,21 @@
 {
     "usuarios": [
       {
+        "id": 1,
         "nome": "Shepardy",
         "chaveAcesso": "1846018bbc715385",
         "nivelAcesso": "desenvolvedor",
         "saldo": 5000
       },
       {
+        "id": 2,
         "nome": "Usuário 2",
         "chaveAcesso": "chave456",
         "nivelAcesso": "patrocinador",
         "saldo": 20
       },
       {
+        "id": 3,
         "nome": "Usuário 3",
         "chaveAcesso": "chave789",
         "nivelAcesso": "personalizado",
@@ -22,6 +25,7 @@
 
     "itens": [
       {
+        "id": 1,
         "nivel": "T1",
         "user": "Shepardy",
         "valor": 100,
@@ -30,6 +34,7 @@
         "status": "pendente"
       },
       {
+        "id": 2,
         "nivel": "T2",
         "user": "user2",
         "valor": 200,
@@ -38,6 +43,7 @@
         "status": "pendente"
       },
       {
+        "id": 3,
         "nivel": "T1",
         "user": "Shepardy",
         "valor": 50,
