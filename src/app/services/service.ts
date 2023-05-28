@@ -27,12 +27,12 @@ const Service = () => {
             link: prompt("Digite o link do item"),
             status: prompt("Digite o status do item"),
         };
-      
-        // Adicionar o novo item ao array de itens
-        //data.itens.push(novoItem);
-        console.log(novoItem);
-      
         return novoItem;
+      }
+        
+        const novoItem = subserviceLink.criarItem(item.nivel, item.user, item.valor, item.descricao, item.link, item.status)
+
+        
       };
       `
       const novoItem = subserviceLink.criarItem(item.nivel, item.user, item.valor, item.descricao, item.link, item.status)
