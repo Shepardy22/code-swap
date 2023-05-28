@@ -1,0 +1,97 @@
+.container {
+  
+  display: flex;
+  flex-direction: column;
+  color: green;
+  height: 100vh;
+  width: 100vw;
+
+  grid-template-rows: 70% 30%;
+}
+
+.containerTop{
+
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+
+  height: 70%;
+  background-color: #000;
+
+}
+
+.subService{
+  border: 1px solid green;
+  padding: 10px;
+
+}
+
+.console {
+
+  
+  background-color: black;
+  color: green;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+
+.painel {
+
+
+}
+
+
+.containerBotton{
+
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 30%;
+  width: 100vw;
+  background-color: #000;
+}
+
+
+
+.linksUsuario{
+  border: 1px solid green;
+  
+
+}
+
+.contaUsuario{
+  border: 1px solid green;
+
+}
+
+
+
+
+
+
+
+
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nivelSelectContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.botoes {
+  padding: 10px;
+  background-color: green;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.botoes:hover {
+  background-color: lightgreen;
+}
