@@ -30,18 +30,14 @@ const Service = () => {
     function listarItens(){
       
       const IListarItens = `
-    function listarItens() {
-      const listarItens = () => {
-        //Retorna um array com os itens
-          const itensArray = data.itens
-          return itensArray;
-        };
+   - function listarItens() {
+      //Busca no DataBase os Dados
+      const itensArray = data.itens 
+      
       return {
         listarItens
       }
     }
-
-    
       `
       const itensArray = subserviceLink.listarItens()
 

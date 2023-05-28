@@ -9,12 +9,15 @@ import '../styles/page.module.css'
 import SubserviceLink from "./services/subservices/subserviceLink";
 
 
-
+import data from "./data/data.json";
 
 
 
 const Page = () => {
 
+ 
+
+  const dadosUsuario = data.usuarios[0];
   
   const [printConsole, setPrintConsole] = useState('');
   const [printResultConsole, setPrintResultConsole] = useState<Array<{
@@ -49,13 +52,26 @@ const Page = () => {
     // Handle comprar item logic
   };
 
-function handleListarItens() {
-  const result = service.listarItens().itensArray;
-  
-  setPrintConsole(service.listarItens().IListarItens);
-  console.log(result);
-  setPrintResultConsole(result);
-};
+  function handleListarItens() {
+    
+    
+    setPrintConsole(`
+   - function handleListarItens() {
+      setPrintConsole(prevConsole => 
+        prevConsole + service.listarItens().IListarItens);
+
+      //Solicitando Service para listagem de Itens
+      const result = service.listarItens().itensArray;
+      setPrintResultConsole(result);
+    };
+    `)
+    setPrintConsole(prevConsole => prevConsole + service.listarItens().IListarItens);
+    
+    
+
+    const result = service.listarItens().itensArray;
+    setPrintResultConsole(result);
+  };
   
 
   function handleListarBook() {
@@ -74,7 +90,8 @@ function handleListarItens() {
         {/* SUB SERVICE */}
         <div className={styles.subService}>
           <h2>Sub services</h2>
-          <p>User: Codigo autenticação usuario</p>
+          {/* usuario salvo no local storage*/}
+          <p>Key: {dadosUsuario.chaveAcesso} </p>
           
 
           <h2>API - Solluty( )</h2> 
@@ -101,8 +118,8 @@ function handleListarItens() {
                   <p>Nivel: {item.nivel}</p>
                   <p>valor: {item.valor} CODES</p>
                   <p>Descrição: {item.descricao}</p>
-                  <p>Link <a href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a></p>
-                  <p>Status</p>
+                  <p>Link: <a href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a></p>
+                  <p>Status: {item.status} </p>
                   ///////////////////////////////////
                 </div>
               ))}
@@ -152,9 +169,9 @@ function handleListarItens() {
 
         <div className={styles.contaUsuario}>
           <h2>Dados do usuario</h2>
-          <p>Nome: </p>
+          <p>Nome: {dadosUsuario.nome}</p>
           <p>Nivel: </p>
-          <p>Saldo: </p>
+          <p>Saldo: {dadosUsuario.saldo} </p>
 
         </div>
 

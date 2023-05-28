@@ -1,10 +1,10 @@
 {
     "usuarios": [
       {
-        "nome": "Usuário 1",
-        "chaveAcesso": "chave123",
+        "nome": "Shepardy",
+        "chaveAcesso": "1846018bbc715385",
         "nivelAcesso": "desenvolvedor",
-        "saldo": 50,
+        "saldo": 5000,
         "links": [
           "https://github.com/repositorio/pull-request1",
           "https://github.com/repositorio/pull-request2"
