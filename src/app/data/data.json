@@ -30,8 +30,25 @@
           "https://github.com/repositorio/pull-request6"
         ]
       }
-    ]
+    ],
 
-    
+    "itens": [
+      {
+        "nivel": "T1",
+        "user": "user1",
+        "valor": 100,
+        "descricao": "Descrição do item 1",
+        "link": "asçdlk213k4ç2l3k4çl23",
+        "status": "pendente"
+      },
+      {
+        "nivel": "T2",
+        "user": "user2",
+        "valor": 200,
+        "descricao": "Descrição do item 2",
+        "link": "asçdlk213k4ç2l3k4çl23",
+        "status": "pendente"
+      }
+    ]
 }
   

@@ -1,13 +1,15 @@
+import data from '../../data/data'
 
 
-
-const SubserviceLink = () => {
-
-    return (
-        <div>
-            <h1>SubserviceLink</h1>
-        </div>
-    );
+function SubserviceLink(){
+    const listarItens = () => {
+        //Retorna um array com os itens
+        const itensArray = data.itens
+        return itensArray;
+      };
+    return {
+        listarItens
+    }
 
 }
 

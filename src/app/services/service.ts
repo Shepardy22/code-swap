@@ -1,14 +1,10 @@
-import data from '../../data.js'
+import SubserviceLink from "./subservices/subserviceLink";
 
 const Service = () => {
 
+  const subserviceLink = SubserviceLink()
 
 
-  const bookOfertas = data.bookOfertas
-
-  const usuarios = data.usuarios
-
-  const itens = data.itens
 
     const criarUsuario = (nome: string, id: string) => {
       // Lógica para criar usuário
@@ -31,16 +27,28 @@ const Service = () => {
       // Lógica para comprar item
     };
   
-    const listarItens = () => {
-      const itensArray = `
-      const itens = [
-        { id: 1, nome: "Item 1" },
-        { id: 2, nome: "Item 2" },
-        // ...
-      ]
+    function listarItens(){
       
+      const IListarItens = `
+    function listarItens() {
+      const listarItens = () => {
+        //Retorna um array com os itens
+          const itensArray = data.itens
+          return itensArray;
+        };
+      return {
+        listarItens
+      }
+    }
+
+    
       `
-      return itensArray;
+      const itensArray = subserviceLink.listarItens()
+
+      return {
+        IListarItens,
+        itensArray
+      };
     };
   
     const listarBookOfertas = () => {

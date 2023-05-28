@@ -6,6 +6,7 @@ import Service from "./services/service";
 import styles from "../styles/page.module.css";
 
 import '../styles/page.module.css'
+import SubserviceLink from "./services/subservices/subserviceLink";
 
 
 
@@ -14,8 +15,16 @@ import '../styles/page.module.css'
 
 const Page = () => {
 
-  const [nivelSelecionado, setNivelSelecionado] = useState('N1');
+  
   const [printConsole, setPrintConsole] = useState('');
+  const [printResultConsole, setPrintResultConsole] = useState<Array<{
+    nivel: string;
+    user: string;
+    valor: number;
+    descricao: string;
+    link: string;
+    status: string;
+  }>>([]);
 
   const service = Service();
 
@@ -41,10 +50,11 @@ const Page = () => {
   };
 
 function handleListarItens() {
+  const result = service.listarItens().itensArray;
   
- 
-  setPrintConsole(service.listarItens());
-
+  setPrintConsole(service.listarItens().IListarItens);
+  console.log(result);
+  setPrintResultConsole(result);
 };
   
 
@@ -79,8 +89,25 @@ function handleListarItens() {
         {/* CONSOLE */}
         <div className={styles.console}>
           <div id="console-mensagem">
-            <p>Console de Mensagens</p>
-            <p>{printConsole}</p>
+            <pre>{printConsole}</pre>
+          </div>
+          <div>
+            <pre>result:</pre>
+            <pre>
+              __________________________________
+              {printResultConsole && printResultConsole.map((item, index) => (
+                <div key={index}>
+                  <p>Nome: {item.user}</p>
+                  <p>Nivel: {item.nivel}</p>
+                  <p>valor: {item.valor} CODES</p>
+                  <p>Descrição: {item.descricao}</p>
+                  <p>Link <a href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a></p>
+                  <p>Status</p>
+                  ///////////////////////////////////
+                </div>
+              ))}
+
+            </pre>
           </div>
         </div>
 
@@ -105,7 +132,7 @@ function handleListarItens() {
               <button id="btn-criar-item" className={styles.botoes}>Criar Item</button>
               <button id="btn-colocar-venda" className={styles.botoes}>Colocar Item à Venda</button>
               <button id="btn-comprar-item" className={styles.botoes}>Comprar Item</button>
-              <button id="btn-listar-itens" className={styles.botoes} onClick={handleListarItens} >Listar Itens</button>
+              <button id="btn-listar-itens" className={styles.botoes} onClick={() => handleListarItens()} >Listar Itens</button>
               <button id="btn-listar-book" className={styles.botoes}>Listar Book de Ofertas</button>
               <button id="btn-forjar-item" className={styles.botoes}>Forjar Item</button>
           </div>
