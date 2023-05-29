@@ -4,7 +4,10 @@ const Service = () => {
 
   const subserviceLink = SubserviceLink()
 
-
+    function limparConsole(){
+      const clearConsole = ''
+      return clearConsole
+    }
 
     const criarUsuario = (nome: string, id: string) => {
       // Lógica para criar usuário
@@ -73,8 +76,9 @@ const Service = () => {
       };
     };
 
-    function ListarItensUsuario(){
-
+    function listarItensUsuario(user: string){
+      const linksUser = subserviceLink.listarItensUsuario(user)
+      return linksUser
     }
   
     const listarBookOfertas = () => {
@@ -95,7 +99,8 @@ const Service = () => {
       listarItens,
       listarBookOfertas,
       forjarItem,
-      ListarItensUsuario
+      listarItensUsuario,
+      limparConsole
     }
   };
   

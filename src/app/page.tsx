@@ -14,11 +14,14 @@ import data from "./data/data.json";
 
 
 const Page = () => {
-
+  const service = Service();
 
 
   const dadosUsuario = data.usuarios[0];
-  const itensArray = data.itens;
+  
+
+
+  const [linksUsuario, setLinksUsuario] = useState<Array<{ link: string; nivel: string; valor: number; status: string; }>>(service.listarItensUsuario(dadosUsuario.nome));
 
   const [printConsole, setPrintConsole] = useState('');
   const [printResultConsole, setPrintResultConsole] = useState<Array<{
@@ -32,11 +35,11 @@ const Page = () => {
 
 
 
-  const service = Service();
+  
 
 
   function handleListarItens() {
-
+    setPrintConsole(service.limparConsole());
 
     setPrintConsole(`
    - function handleListarItens() {
@@ -55,25 +58,26 @@ const Page = () => {
 
     const result = service.listarItens().itensArray;
     setPrintResultConsole(result);
-    console.log(result);
+
   };
 
   function handleCriarItem() {
+    setPrintConsole(service.limparConsole());
     const nivel = prompt("Digite o nível do item");
-  const user = Number(prompt("Digite o usuário do item")) ;
-  const valor = Number(prompt("Digite o valor do item"));
-  const descricao = prompt("Digite a descrição do item");
-  const link = prompt("Digite o link do item");
-  const status = prompt("Digite o status do item");
+    const user = Number(prompt("Digite o usuário do item"));
+    const valor = Number(prompt("Digite o valor do item"));
+    const descricao = prompt("Digite a descrição do item");
+    const link = prompt("Digite o link do item");
+    const status = prompt("Digite o status do item");
 
-  const novoItem = {
-    nivel: nivel || "",
-    user:  user,
-    valor: valor,
-    descricao: descricao || "",
-    link: link || "",
-    status: status || "",
-  };
+    const novoItem = {
+      nivel: nivel || "",
+      user: user,
+      valor: valor,
+      descricao: descricao || "",
+      link: link || "",
+      status: status || "",
+    };
     setPrintConsole(`
     - function handleCriarItem() {
       //Solicitando Service para criar Item
@@ -86,8 +90,8 @@ const Page = () => {
     const result = service.criarItem(novoItem).novoItem;
     setPrintConsole(prevConsole => prevConsole + service.criarItem(novoItem).IcriarItem);
     setPrintConsole(prevConsole => prevConsole + `Item criado com sucesso!`);
-    
-    
+
+
     //console.log(result);
   };
 
@@ -167,7 +171,6 @@ const Page = () => {
             <button id="btn-forjar-item" className={styles.botoes}>Forjar Item</button>
           </div>
         </div>
-
       </div>
 
       {/* CONTAINER INFERIOR */}
@@ -176,9 +179,21 @@ const Page = () => {
         <div className={styles.linksUsuario}>
           <h2>Links de Request</h2>
           <h3>
-            T1 - Pull Request
+             - Pull Request
           </h3>
-
+          <div>
+  {linksUsuario && linksUsuario.map((link, index) => (
+    <div key={index}>
+      <p>
+        <span>{link.nivel} - </span>
+        <a href={link.link} target="_blank" rel="noopener noreferrer">
+          {link.link}
+        </a>
+        <span> - Valor: {link.valor} - Status: {link.status}</span>
+      </p>
+    </div>
+  ))}
+</div>
 
         </div>
 
