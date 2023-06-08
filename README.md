@@ -2,9 +2,6 @@
 
 Este é um projeto de exemplo para um sistema de CRUD para os itens o Quests
 
-![NOVO ARTEFATO](https://github.com/Shepardy22/code-swap/assets/102148711/a8eb4642-764b-46ca-9d62-7617a80483df)
-
-
 
 ## Descrição
 
@@ -44,3 +41,5 @@ Contribuições são bem-vindas! Se você tiver sugestões, correções de bugs 
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+
+![NOVO ARTEFATO](https://github.com/Shepardy22/code-swap/assets/102148711/a8eb4642-764b-46ca-9d62-7617a80483df)
