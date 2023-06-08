@@ -36,7 +36,7 @@ function SubserviceLink(){
         valor: item.valor,
         status: item.status,
       }));
-      console.log(links);
+      
       return links;
     }
     
