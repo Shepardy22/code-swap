@@ -42,5 +42,9 @@ Contribuições são bem-vindas! Se você tiver sugestões, correções de bugs 
 
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
 
+
+## Escopo dos Tiers para divisão de Tarefas.
 ![NOVO ARTEFATO](https://github.com/Shepardy22/code-swap/assets/102148711/a8eb4642-764b-46ca-9d62-7617a80483df)
+
+## Layout Base para Interface.
 ![ARTEFATO- TELA PRINCIPAL](https://github.com/Shepardy22/code-swap/assets/102148711/28d4ca6c-70bf-409b-93ac-632aab4b8556)
